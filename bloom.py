@@ -1,4 +1,5 @@
 from numpy.random import default_rng
+from hashlib import md5
 
 # To make results reproducible while making sure repeated generation of hash functions is random
 SEED_GENERATOR = default_rng(42)
@@ -8,14 +9,19 @@ BIG_RANGE = 1000000
 
 
 class BloomFilter:
-    def __init__(self):
-        pass
+    def __init__(self, n, k, hash_gen):
+        self.array = [0] * n
+        self.hashes = hash_gen(k, n)
 
-    def add(self):
-        pass
+    def add(self, i):
+        for hash_f in self.hashes:
+            self.array[hash_f(i)] = 1
 
-    def query(self):
-        pass
+    def query(self, i):
+        for hash_f in self.hashes:
+            if self.array[hash_f(i)] == 0:
+                return False
+            return True
 
 
 def hash_1(k, n, seeds=None):
@@ -50,7 +56,7 @@ def hash_2(k, n, a=None, b=None):  # unclear: needs n to be big prime?
     return [h(ai, bi) for ai, bi in zip(a, b)]
 
 
-def bloom(N, n, m, a, t, b, k=3, hash=hash_1):
+def bloom(N, n, m, a, t, b, k=3, hash_gen=hash_1):
     # N := size of domain (should be BIG)
     # n := size of bitarray
     # m := number of elements to be added
@@ -59,7 +65,7 @@ def bloom(N, n, m, a, t, b, k=3, hash=hash_1):
     # b := list of elements to be queried (should be in range [0, N-1])
     # k := optional, number of hash functions the filter should use
     # hash := optional, hash function generator that should at least take k and n as input
-    filter = BloomFilter(n, k, hash)
+    filter = BloomFilter(n, k, hash_gen)
     for item in a:
         filter.add(item)
     results = []
