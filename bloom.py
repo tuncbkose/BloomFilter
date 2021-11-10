@@ -1,5 +1,5 @@
 from numpy.random import default_rng
-from hashlib import md5
+import math
 
 # To make results reproducible while making sure repeated generation of hash functions is random
 SEED_GENERATOR = default_rng(42)
@@ -22,6 +22,60 @@ class BloomFilter:
             if self.array[hash_f(i)] == 0:
                 return False
             return True
+
+
+class CountingBloomFilter(BloomFilter):
+    def __init__(self, n, k, hash_gen):
+        super().__init__(n, k, hash_gen)
+        self.counts = [0] * n
+
+    def add(self, i):
+        for hash_f in self.hashes:
+            idx = hash_f(i)
+            self.counts[idx] += 1
+            self.array[idx] = 1
+
+    def count(self, i):
+        # returns (approximately) how many times i has been added
+        c_min = math.inf
+        for hash_f in self.hashes:
+            idx = hash_f(i)
+            c_min = min(c_min, self.counts[idx])
+        return c_min
+
+    def delete(self, i):
+        # Trying to delete an item not in the filter can mess with counts of other items
+        # There doesn't seem to be an easy fix for this, so the responsibility is left to the user
+        for hash_f in self.hashes:
+            idx = hash_f(i)
+            self.counts[idx] -= 1
+            if self.counts[idx] <= 0:
+                self.array[idx] = 0
+
+
+class DeletableBloomFilter(BloomFilter):
+    def __init__(self, n, k, hash_gen, r):
+        super().__init__(n, k, hash_gen)
+        self.bitmap = [0] * r
+        self.r = r
+
+    def add(self, i):
+        for hash_f in self.hashes:
+            idx = hash_f(i)
+            if self.array[idx] == 1:
+                self.bitmap[idx % self.r] = 1
+            else:
+                self.array[idx] = 1
+
+    def delete(self, i):
+        # Deletion is not guaranteed but is likely
+        deleted = False
+        for hash_f in self.hashes:
+            idx = hash_f(i)
+            if self.bitmap[idx % self.r] == 0:
+                self.array[idx] = 0
+                deleted = True
+        return deleted
 
 
 def hash_1(k, n, seeds=None):
