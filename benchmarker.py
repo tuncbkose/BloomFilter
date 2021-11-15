@@ -31,11 +31,11 @@ def part_1():
 
 			hashes_1 = bloom.hash_1(k, n)
 			hashes_2 = bloom.hash_2(k, n)
-			hashes_p = zip(hashes_1, hashes_2)
 
 			for i in data:
 				range_1_first[hashes_1[0](i)] += 1
 				range_2_first[hashes_2[0](i)] += 1
+				hashes_p = zip(hashes_1, hashes_2)
 				for hash_f1, hash_f2 in hashes_p:
 					range_1_all[hash_f1(i)] += 1
 					range_2_all[hash_f2(i)] += 1
