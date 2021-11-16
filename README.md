@@ -30,12 +30,51 @@ we want an even distribution
 
 ![part1_n10_k1_h1_all.png](data/part1_n10_k1_h1_all.png)
 ![part1_n10_k1_h1_first.png](data/part1_n10_k1_h1_first.png)
+n = 10, k = 1, h = 1 
+
 ![part1_n10_k1_h2_all.png](data/part1_n10_k1_h2_all.png)
 ![part1_n10_k1_h2_first.png](data/part1_n10_k1_h2_first.png)
+
 ![part1_n10_k3_h1_all.png](data/part1_n10_k3_h1_all.png)
 ![part1_n10_k3_h1_first.png](data/part1_n10_k3_h1_first.png)
+
 ![part1_n10_k3_h2_all.png](data/part1_n10_k3_h2_all.png)
 ![part1_n10_k3_h2_first.png](data/part1_n10_k3_h2_first.png)
+
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+
+
+![part1_n10_k5_h2_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h2_first.png](data/part1_n10_k5_h1_first.png)
+
+
+
+
+
+![part1_n30_k1_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n30_k1_h1_first.png](data/part1_n10_k5_h1_first.png)
+
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
+![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
 
 
 ### false positives
