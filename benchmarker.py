@@ -54,15 +54,15 @@ def part_1():
 
 def part_2():
 	N = 1  # doesn't seem to affect anything
-	t = 100  # t
+	t = 100  # number of tests
 	fp_results = []
-	for k in [1, 3, 5]:
-		for n in [20, 40, 100]:
-			for m in [n//4, n//2, 3*n//4, n]:
+	for k in [1, 3, 5]: # number of hash functions
+		for n in [20, 40, 100]: # size of bitarray
+			for m in [n//4, n//2, 3*n//4, n]: # number of elements added to filter
 				# Every item being queried is not in filter
 				results = bloom.bloom(N, n, m, range(m), t, range(m, m+t), k)
 				fp = sum(results) / len(results)
-				fp_results.append((k,n,t,fp))
+				fp_results.append((k,n,m,fp))
 	with open("data/part2.txt", "w") as f:
 		f.write("k n t fp\n")
 		for k, n, t, fp in fp_results:
