@@ -16,8 +16,7 @@ We had to design hash functions to do this. Both return lambdas that can be used
 `k` and `n` as inputs for the number of flags each object will trigger and the size of the Bloom filter respectively. 
 
 ### Hash 1
-From what I gather, this is a normal hash function. Given an input, it will use a random number from our given seed to generate a
-aaaaaaaaaaaaaaaa I need to take nap
+From what I gather, this is a normal hash function. Given an input, it will use a random number from our given seed to generate a 
 
 
 ### Hash 2
@@ -25,6 +24,28 @@ aaaaaaaaaaaaaaaa I need to take nap
 
 ## TESTS AND BENCHMARKING
 we tested the 2 hash functions
+
+### graphs are all even which is good
+we want an even distribution
+
+![part1_n10_k1_h1_all.png](data/part1_n10_k1_h1_all.png)
+![part1_n10_k1_h1_first.png](data/part1_n10_k1_h1_first.png)
+![part1_n10_k1_h2_all.png](data/part1_n10_k1_h2_all.png)
+![part1_n10_k1_h2_first.png](data/part1_n10_k1_h2_first.png)
+![part1_n10_k3_h1_all.png](data/part1_n10_k3_h1_all.png)
+![part1_n10_k3_h1_first.png](data/part1_n10_k3_h1_first.png)
+![part1_n10_k3_h2_all.png](data/part1_n10_k3_h2_all.png)
+![part1_n10_k3_h2_first.png](data/part1_n10_k3_h2_first.png)
+
+
+### false positives
+higher k is bad for false positives if theres a small n
+
+
+
+
+
+
 
 
 
