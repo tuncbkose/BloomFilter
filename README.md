@@ -23,7 +23,7 @@ From what I gather, this is a normal hash function. Given an input, it will use 
 
 
 ## TESTS AND BENCHMARKING
-we tested the 2 hash functions to make sure they distributed everything evenly. We benchmarked to make sure we were getting an even distribution.
+we tested the 2 hash functions to make sure they distributed everything evenly. We benchmarked hit rate also REEEEEE
 
 ### graphs are all even which is good
 We want an even distribution because that means our hashes are distributing everything evenly. Below are some graphs that have been 
