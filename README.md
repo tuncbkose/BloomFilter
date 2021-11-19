@@ -23,58 +23,65 @@ From what I gather, this is a normal hash function. Given an input, it will use 
 
 
 ## TESTS AND BENCHMARKING
-we tested the 2 hash functions
+we tested the 2 hash functions to make sure they distributed everything evenly. We benchmarked to make sure we were getting an even distribution.
 
 ### graphs are all even which is good
-we want an even distribution
+We want an even distribution because that means our hashes are distributing everything evenly. Below are some graphs that have been 
+selected to show how even they are. I've hand checked all the graphs to make sure that they're all even. You can see all the graphs 
+for yourself in the `data` directory. Once you see that, you'll see why we chose to omit most of them. it would have made this page 
+incredibly long. You'll get the gist after a few of them. (I renege on all of this until the issue is fixed).
 
-![part1_n10_k1_h1_all.png](data/part1_n10_k1_h1_all.png)
-![part1_n10_k1_h1_first.png](data/part1_n10_k1_h1_first.png)
-n = 10, k = 1, h = 1 
+n = 10, k = 1, hash = 1 
 
-![part1_n10_k1_h2_all.png](data/part1_n10_k1_h2_all.png)
-![part1_n10_k1_h2_first.png](data/part1_n10_k1_h2_first.png)
-
-![part1_n10_k3_h1_all.png](data/part1_n10_k3_h1_all.png)
-![part1_n10_k3_h1_first.png](data/part1_n10_k3_h1_first.png)
-
-![part1_n10_k3_h2_all.png](data/part1_n10_k3_h2_all.png)
-![part1_n10_k3_h2_first.png](data/part1_n10_k3_h2_first.png)
-
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-
-
-![part1_n10_k5_h2_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h2_first.png](data/part1_n10_k5_h1_first.png)
+all: <img src="data/part1_n10_k1_h1_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n10_k1_h1_first.png" alt="alt text" width="250px" height="250px">
 
 
 
+n = 10, k = 1, hash = 2 
+
+all: <img src="data/part1_n10_k1_h2_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n10_k1_h2_first.png" alt="alt text" width="250px" height="250px">
 
 
-![part1_n30_k1_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n30_k1_h1_first.png](data/part1_n10_k5_h1_first.png)
 
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
-![part1_n10_k5_h1_all.png](data/part1_n10_k5_h1_all.png)
-![part1_n10_k5_h1_first.png](data/part1_n10_k5_h1_first.png)
+n = 10, k = 5, hash = 2 
+
+all: <img src="data/part1_n10_k5_h2_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n10_k5_h2_first.png" alt="alt text" width="250px" height="250px">
+
+
+
+n = 30, k = 5, hash = 2 
+
+all: <img src="data/part1_n30_k5_h2_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n30_k5_h2_first.png" alt="alt text" width="250px" height="250px">
+
+
+
+n = 100, k = 5, hash = 1 
+
+all: <img src="data/part1_n100_k5_h1_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n100_k5_h1_first.png" alt="alt text" width="250px" height="250px">
+
+
+n = 100, k = 3, hash = 2 
+
+all: <img src="data/part1_n100_k3_h2_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n100_k3_h2_first.png" alt="alt text" width="250px" height="250px">
+
+
+
+n = 100, k = 5, hash = 2 
+
+all: <img src="data/part1_n100_k5_h2_all.png" alt="alt text" width="250px" height="250px">
+first: <img src="data/part1_n100_k5_h2_first.png" alt="alt text" width="250px" height="250px">
+
+
+
+
+
+
 
 
 ### false positives
@@ -87,5 +94,3 @@ higher k is bad for false positives if theres a small n
 
 
 
-
-# I AM TRYING MY HARDEST TO READ PYTHON CODE
