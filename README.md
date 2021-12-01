@@ -1,35 +1,7 @@
-# BLOOM FILTER
+### Hash Functions
 
-## Detecting if something is in a set 
-
-Bloom filters are a table of flags that we can use to determine if a given object is in a larger, harder-to-search set. It's time 
-consuming to search a large database. Using a Bloom filter, we can drastically reduce the time it takes to see if something is in
-a larger set. A given object will hash to `k` separate flags in the `n` length Bloom filter which we can quickly glance at to 
-determine if the item is in a larger set. This filter doesn't have to be correct all the time, it's okay for the filter to 
-accidentally have a hit when a hit isn't there. That's still a million times better than looking everything up all the time.
-
-### removing things from a Bloom filter
-You probably can't do this. This seems like a bad idea.
-
-## Hash Functions
-We had to design hash functions to do this. Both return lambdas that can be used to hash objects for a Bloom filter. Both also take 
-`k` and `n` as inputs for the number of flags each object will trigger and the size of the Bloom filter respectively. 
-
-### Hash 1
-From what I gather, this is a normal hash function. Given an input, it will use a random number from our given seed to generate a 
-
-
-### Hash 2
-
-
-## TESTS AND BENCHMARKING
-we tested the 2 hash functions to make sure they distributed everything evenly. We benchmarked hit rate also REEEEEE
-
-### graphs are all even which is good
-We want an even distribution because that means our hashes are distributing everything evenly. Below are some graphs that have been 
-selected to show how even they are. I've hand checked all the graphs to make sure that they're all even. You can see all the graphs 
-for yourself in the `data` directory. Once you see that, you'll see why we chose to omit most of them. it would have made this page 
-incredibly long. You'll get the gist after a few of them. (I renege on all of this until the issue is fixed).
+Below are some histograms from different settings, where n denotes the size of the bitarray and k denotes the number of hash functions.
+Images captioned "all" show the count of outputs across all hash functions, whereas "first" show the count of outputs for a single hash function.
 
 n = 10, k = 1, hash = 1 
 
@@ -77,20 +49,24 @@ n = 100, k = 5, hash = 2
 all: <img src="data/part1_n100_k5_h2_all.png" alt="alt text" width="250px" height="250px">
 first: <img src="data/part1_n100_k5_h2_first.png" alt="alt text" width="250px" height="250px">
 
+Ideally, the hash function will map into its range uniformly. 
+We can see that while hash function 1 is doing so, hash function 2 is resulting in an uneven mapping in the overall count.
+While all firsts for hash function 2 is mapping uniformly (in a way that doesn't utilize [0,n-1] completely, which is unideal),
+we can see that different functions in the same group tend to have a smaller range than what is possible, thus reducing entropy and the filter performance.
 
 
+### False Positive Rate
+
+<img src="data/part2.png" alt="alt text">
+
+The above graph is faceted with the number of hash functions.
+n denotes the size of the bitarray and m denotes the number of elements in the filter.
+Unsurprisingly, the false positive rate decreases as the size of the bitarray increases.
+In these settings, false positive rate is increasing as the number of hash functions increases.
+Also unsurprisingly, adding more items to the filter also increases the false positive rate.
 
 
+### Extensions
 
-
-
-### false positives
-higher k is bad for false positives if theres a small n
-
-
-
-
-
-
-
-
+We have additionally implemented Counting Bloom Filters and Deletable Bloom Filters, as described in *Theory and Practice of Bloom Filters for
+Distributed Systems* paper.
