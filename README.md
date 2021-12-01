@@ -1,3 +1,5 @@
+Ariel and Tunc
+
 ### Hash Functions
 
 Below are some histograms from different settings, where n denotes the size of the bitarray and k denotes the number of hash functions.
